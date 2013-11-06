@@ -24,6 +24,7 @@
         </activity>
         <activity
             android:name="Pages_Details"></activity>
+        <activity android:name="Previous_conference"></activity>
     </application>
 
 </manifest>
