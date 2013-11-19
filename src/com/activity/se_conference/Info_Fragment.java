@@ -27,7 +27,7 @@ public class Info_Fragment extends Fragment{
 		view=inflater.inflate(R.layout.info_fragment, container, false);
 		listView = (ListView) view.findViewById(R.id.list);
         listView.setAdapter(new ArrayAdapter<String>(getActivity(),  
-                R.layout.listview_item, info));
+                R.layout.list_layout, info));//listview_item
         listView.setCacheColorHint(0);
         
         listView.setOnItemClickListener(new OnItemClickListener(){
@@ -43,8 +43,8 @@ public class Info_Fragment extends Fragment{
 					startActivity(it);
 				 }
 				 if(clickName.equals("Previous Conference")){
-					 Intent intent = new Intent(getActivity(),Previous_conference.class);
-			         startActivity(intent);
+					/* Intent intent = new Intent(getActivity(),Previous_conference.class);
+			         startActivity(intent);*/
 				 }
             }
         });

@@ -3,6 +3,8 @@ package com.activity.se_conference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import myViews.MyPagerAdapter;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
