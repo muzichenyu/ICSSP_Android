@@ -43,7 +43,7 @@ public class Info_Fragment extends Fragment{
 					startActivity(it);
 				 }
 				 if(clickName.equals("Previous Conference")){
-					/* Intent intent = new Intent(getActivity(),Previous_conference.class);
+/*					Intent intent = new Intent(getActivity(),Previous_conference.class);
 			         startActivity(intent);*/
 				 }
             }
