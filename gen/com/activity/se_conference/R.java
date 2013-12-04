@@ -490,7 +490,7 @@ public final class R {
         public static final int RelativeLayout01=0x7f090024;
         public static final int action_settings=0x7f09002b;
         public static final int agenda_fragment=0x7f090009;
-        public static final int child=0x7f09001a;
+        public static final int child=0x7f090018;
         public static final int classGroupLayout=0x7f09001b;
         public static final int classItemListView=0x7f09002a;
         public static final int classPartNameLay=0x7f09001c;
@@ -502,7 +502,7 @@ public final class R {
         public static final int class_part_name=0x7f09001e;
         public static final int drawer=0x7f090008;
         public static final int drawer_layout=0x7f090001;
-        public static final int icon=0x7f090018;
+        public static final int icon=0x7f090016;
         public static final int image_dialog_viewpager=0x7f09000f;
         public static final int info_fragment=0x7f09000a;
         public static final int linearLayout2=0x7f090023;
@@ -511,13 +511,13 @@ public final class R {
         public static final int lyPortrait=0x7f090021;
         public static final int maps_fragment=0x7f09000e;
         public static final int movearea_pointarea=0x7f090010;
-        public static final int newsListView=0x7f090017;
-        public static final int news_fragment=0x7f090016;
+        public static final int newsListView=0x7f09001a;
+        public static final int news_fragment=0x7f090019;
         public static final int pages_details_linearlayout=0x7f090027;
         public static final int pages_text=0x7f090028;
         public static final int papers_fragment=0x7f090029;
         public static final int relativeLayout1=0x7f09001f;
-        public static final int text=0x7f090019;
+        public static final int text=0x7f090017;
         public static final int text1=0x7f09000d;
         public static final int viewpager=0x7f090007;
     }
@@ -533,14 +533,15 @@ public final class R {
         public static final int maps_frag_image_dialog=0x7f030008;
         public static final int maps_fragment=0x7f030009;
         public static final int maps_imagelist_layout=0x7f03000a;
-        public static final int news=0x7f03000b;
-        public static final int news_fragment=0x7f03000c;
-        public static final int outline=0x7f03000d;
-        public static final int pages_class_part_lay=0x7f03000e;
-        public static final int pages_details=0x7f03000f;
-        public static final int papers=0x7f030010;
-        public static final int papers_fragment=0x7f030011;
-        public static final int previous_conference=0x7f030012;
+        public static final int myoutline=0x7f03000b;
+        public static final int news=0x7f03000c;
+        public static final int news_fragment=0x7f03000d;
+        public static final int outline=0x7f03000e;
+        public static final int pages_class_part_lay=0x7f03000f;
+        public static final int pages_details=0x7f030010;
+        public static final int papers=0x7f030011;
+        public static final int papers_fragment=0x7f030012;
+        public static final int previous_conference=0x7f030013;
     }
     public static final class menu {
         public static final int main=0x7f080000;
