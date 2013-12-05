@@ -1,11 +1,15 @@
 package myViews;
 import java.util.Vector;
 import com.activity.se_conference.R;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,6 +19,8 @@ public class ClassListAdapter extends BaseAdapter {
 	private Vector<ClassItem> items;
 	private Context context;
 	private LayoutInflater mInflater;
+	private boolean isimportanted=false;
+	private boolean isScroll=false;
 	
 	public ClassListAdapter(Context context) {
 		this.context = context;
@@ -67,9 +73,31 @@ public class ClassListAdapter extends BaseAdapter {
 			holder.partLayout = (LinearLayout)convertView.findViewById(R.id.classGroupLayout);
 			holder.partId = (TextView) convertView.findViewById(R.id.class_part_id);
 			holder.partName = (TextView) convertView.findViewById(R.id.class_part_name);
-			holder.className = (TextView) convertView.findViewById(R.id.class_item_name);
-			holder.mIcon = (ImageView)convertView.findViewById(R.id.class_item_img);
-			
+			holder.title = (TextView) convertView.findViewById(R.id.title);
+			holder.author = (TextView) convertView.findViewById(R.id.author);
+			holder.type = (TextView) convertView.findViewById(R.id.type);
+			holder.important=(ImageView) convertView.findViewById(R.id.important);
+			holder.important.setOnClickListener(new OnClickListener(){
+
+				@SuppressLint("NewApi")
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					if(isimportanted){
+						Drawable drawable = context.getResources().getDrawable(R.drawable.toimportant);
+						holder.important.setBackground(drawable);
+						isimportanted=false;
+					}
+					else{
+						Drawable drawable = context.getResources().getDrawable(R.drawable.importanted);
+						holder.important.setBackground(drawable);
+						isimportanted=true;
+					}
+					
+				}
+				
+			});
+
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -77,17 +105,20 @@ public class ClassListAdapter extends BaseAdapter {
 		
 		ClassItem classItem = items.get(position);
 		if(classItem != null){
-			if(classItem.ifTop){
+			if(classItem.getIfTop()){
 				holder.partLayout.setVisibility(View.VISIBLE);
-				holder.partName.setText(classItem.partName);
-				holder.className.setText(classItem.className);
+				holder.partName.setText(classItem.getPartName());
+				holder.title.setText(classItem.getTitle());
+				holder.author.setText(classItem.getAuthor());
+				holder.type.setText(classItem.getType());
 			}else{
 				holder.partLayout.setVisibility(View.GONE);
-				holder.partName.setText(classItem.partName);
-				holder.className.setText(classItem.className);
+				holder.partName.setText(classItem.getPartName());
+				holder.title.setText(classItem.getTitle());
+				holder.author.setText(classItem.getAuthor());
+				holder.type.setText(classItem.getType());
 			}
 			
-			holder.mIcon.setBackgroundResource(R.drawable.default_class_icon);
 		}
 		return convertView;
 	}
@@ -96,7 +127,9 @@ public class ClassListAdapter extends BaseAdapter {
 		LinearLayout partLayout;
 		TextView partId;
 		TextView partName;
-		TextView className;
-		ImageView mIcon;
+		TextView title;
+		TextView author;
+		TextView type;
+		ImageView important;
 	}
 }

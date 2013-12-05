@@ -97,8 +97,8 @@ public class News_Fragment extends Fragment{
 								}
 								
 							}else{
-								intent=new Intent(getActivity(),Pages_Details.class);
-								startActivity(intent);
+								/*intent=new Intent(getActivity(),Pages_Details.class);
+								startActivity(intent);*/
 							}
 						}
 				}

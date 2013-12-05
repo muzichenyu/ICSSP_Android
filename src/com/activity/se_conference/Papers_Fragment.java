@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -23,6 +25,10 @@ public class Papers_Fragment extends Fragment{
 	private View view=null;
 	ViewGroup container=null;
 	LayoutInflater inflater=null;
+	private Button authorbutton=null;
+	private Button typebutton=null;
+	private Button importantbutton=null;
+	Vector<ClassItem> data = new Vector<ClassItem>();
 	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
     		Bundle savedInstanceState) {  
@@ -37,17 +43,48 @@ public class Papers_Fragment extends Fragment{
 		classItemList=(ListView) view.findViewById(R.id.classItemListView);
 		classListAdapter = new ClassListAdapter(getActivity());
 		classItemList.setAdapter(classListAdapter);
-		
-		Vector<ClassItem> data = new Vector<ClassItem>();
+		authorbutton=(Button) view.findViewById(R.id.authorbutton);
+		importantbutton=(Button) view.findViewById(R.id.importantbutton);
+		typebutton=(Button) view.findViewById(R.id.typebutton);
+		typebutton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				data.removeElementAt(4);
+				addAdapterItem(data);
+			}
+			
+		});
+		importantbutton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				data.removeElementAt(4);
+				addAdapterItem(data);
+			}
+			
+		});
+		authorbutton.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				data.removeElementAt(4);
+				addAdapterItem(data);
+			}
+			
+		});
 	
-		ClassItem item1 = new ClassItem(1,"class1",1,"part1","");
-		ClassItem item2 = new ClassItem(1,"class1",2,"part2","");
-		ClassItem item3 = new ClassItem(1,"class1",2,"part2","");
-		ClassItem item4 = new ClassItem(1,"class1",3,"part3","");
-		ClassItem item5 = new ClassItem(1,"class1",3,"part3","");
-		ClassItem item6 = new ClassItem(1,"class1",3,"part3","");
-		ClassItem item7 = new ClassItem(1,"class1",4,"part4","");
-		ClassItem item8 = new ClassItem(1,"class1",4,"part4","");
+		ClassItem item1 = new ClassItem("paper1","auther1","type1",1,"type1");
+		ClassItem item2 = new ClassItem("paper2","auther2","type2",2,"type2");
+		ClassItem item3 = new ClassItem("paper3","auther3","type2",2,"type2");
+		ClassItem item4 = new ClassItem("paper4","auther1","type3",3,"type3");
+		ClassItem item5 = new ClassItem("paper5","auther5","type3",3,"type3");
+		ClassItem item6 = new ClassItem("paper6","auther6","type3",3,"type3");
+		ClassItem item7 = new ClassItem("paper7","auther7","type4",4,"type4");
+		ClassItem item8 = new ClassItem("paper8","auther8","type4",4,"type4");
 		
 		data.addElement(item1);
 		data.addElement(item2);
@@ -67,38 +104,6 @@ public class Papers_Fragment extends Fragment{
 				// TODO Auto-generated method stub
 				Intent intent=null;
 				switch(arg2){
-				case 0:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 1:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 2:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 3:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 4:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 5:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 6:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
-				case 7:
-					intent=new Intent(getActivity(),Pages_Details.class);
-					startActivity(intent);
-					break;
 				
 				}
 				
@@ -116,11 +121,11 @@ public class Papers_Fragment extends Fragment{
 		if(data!=null && data.size()>0){
 			for(int i=0 ; i<data.size() ; i++){
 				temp = data.get(i);
-				if(set.contains(temp.partId)){
+				if(set.contains(temp.getPartId())){
 					classItem.add(temp); 
 				}else{
-					temp.ifTop = true;
-					set.add(temp.partId);
+					temp.setIfTop(true);
+					set.add(temp.getPartId());
 					classItem.add(temp);
 				}
 			}

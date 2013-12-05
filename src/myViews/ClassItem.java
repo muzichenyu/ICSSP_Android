@@ -3,39 +3,49 @@ package myViews;
 import java.io.Serializable;
 
 public class ClassItem implements Serializable{
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 	private static final long serialVersionUID = 1L;
 	
-	public int classId = 0;
-	public String classIcon = "";
-	public String className = "";
-	public int partId = 0;
-	public String partName = "";
-	public boolean ifTop = false;
+	private String title = "";
+	private int partId = 0;
+	private String partName = "";
+	private String author = "";
+	private String type = "";
+	private boolean ifTop = false;
 	
 	public ClassItem() {
 		super();
 	}
 	
-	public ClassItem(int classId, String className, int partId,
-			String partName, String classIcon) {
+	public ClassItem(String title,String author,String type, int partId,String partName) {
 		super();
-		this.classId = classId;
-		this.className = className;
+		this.title = title;
 		this.partId = partId;
+		this.author=author;
+		this.type=type;
 		this.partName = partName;
-		this.classIcon = classIcon;
-	}
-	public int getClassId() {
-		return classId;
-	}
-	public void setClassId(int classId) {
-		this.classId = classId;
-	}
-	public String getClassName() {
-		return className;
-	}
-	public void setClassName(String className) {
-		this.className = className;
 	}
 	public int getPartId() {
 		return partId;
@@ -49,15 +59,14 @@ public class ClassItem implements Serializable{
 	public void setPartName(String partName) {
 		this.partName = partName;
 	}
-	public String getClassIcon() {
-		return classIcon;
+	public void setIfTop(boolean iftop){
+		this.ifTop=iftop;
 	}
-	public void setClassIcon(String classIcon) {
-		this.classIcon = classIcon;
+	public boolean getIfTop(){
+		return ifTop;
 	}
-	
 	@Override
 	public String toString() {
-		return "ifTop:::" + ifTop + ":::className:::" + className + ":::partName:::" + partName;
+		return "ifTop:::" + ifTop + ":::title:::" + title + ":::partName:::" + partName;
 	}
 }
