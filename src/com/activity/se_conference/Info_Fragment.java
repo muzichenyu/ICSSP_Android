@@ -52,6 +52,16 @@ public class Info_Fragment extends Fragment{
 							
 
 							if(!mPdfOutlinesCount.get(arg2).isMhasParent()){
+								String clickName=mPdfOutlinesCount.get(arg2).getOutlineTitle();
+								if(clickName.equals("Travel Information")){
+									Intent it = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.icsp-conferences.org/icssp2014/Travel.html"));
+									it.setClassName("com.android.browser", "com.android.browser.BrowserActivity");
+									startActivity(it);
+								}
+								if(clickName.equals("Previous Conference")){
+									Intent it = new Intent(getActivity(),Previous_conference.class);
+									startActivity(it);
+								}
 								if (mPdfOutlinesCount.get(arg2).isExpanded()) {
 									mPdfOutlinesCount.get(arg2).setExpanded(false);
 									PDFOutlineElement pdfOutlineElement=mPdfOutlinesCount.get(arg2);
