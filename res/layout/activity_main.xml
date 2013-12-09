@@ -13,8 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/skyblue">
-        
+        android:background="@color/Title_BackColor">
         
         <Button
             android:layout_width="wrap_content"
@@ -27,7 +26,7 @@
        		 android:layout_height="wrap_content" 
        		 android:text="ICSSP"
        		 android:layout_gravity="center"
-       		 android:textSize="30sp"/>
+       		 style="@style/Title_Bar_Text"/>
             
         
     </LinearLayout>
@@ -46,48 +45,156 @@
 	    	android:layout_height="wrap_content"
 	    	android:orientation="horizontal"
 	    	>
-	        <TextView
-	            android:layout_width="fill_parent"
-	    		android:layout_height="wrap_content"
-	    		android:text="News"
-	    		android:layout_weight="1"
-	    		android:gravity="center"
-	    		android:id="@+id/News_textview"
-	    		android:textSize="15sp"/>
-	        <TextView
-	            android:layout_width="fill_parent"
-	    		android:layout_height="wrap_content"
-	    		android:text="Papers"
-	    		android:layout_weight="1"
-	    		android:gravity="center"
-	    		android:id="@+id/Papers_textview"
-	    		android:textSize="15sp"/>
-	        <TextView
-	            android:layout_width="fill_parent"
-	    		android:layout_height="wrap_content"
-	    		android:text="Agenda"
-	    		android:layout_weight="1"
-	    		android:gravity="center"
-	    		android:id="@+id/Agenda_textview"
-	    		android:textSize="15sp"/>
-	        <TextView
-	            android:layout_width="fill_parent"
-	    		android:layout_height="wrap_content"
-	    		android:text="Maps"
-	    		android:layout_weight="1"
-	    		android:gravity="center"
-	    		android:id="@+id/Maps_textview"
-	    		android:textSize="15sp"/>
-	        <TextView
-	            android:layout_width="fill_parent"
-	    		android:layout_height="wrap_content"
-	    		android:text="Info"
-	    		android:layout_weight="1"
-	    		android:gravity="center"
-	    		android:id="@+id/Info_textview"
-	    		android:textSize="15sp"/>
+	    	<LinearLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="vertical"
+	    	    android:layout_weight="1"
+	    	    android:gravity="center"
+	    	    android:id="@+id/News_Layout">
+		    	    <ImageView
+		    	        android:id="@+id/News_Image"
+		    	        android:layout_width="wrap_content"
+		    	    	android:layout_height="wrap_content"
+		    	    	android:scaleType="centerCrop"
+		    	    	android:src="@drawable/news_x_icon"/>   
+		    	    
+		    	    <TextView
+			            android:layout_width="fill_parent"
+			    		android:layout_height="wrap_content"
+			    		android:text="News"
+			    		android:layout_weight="1"
+			    		android:gravity="center"
+			    		android:id="@+id/News_textview"
+			    		style="@style/Choose_Bar_Text"/>
+		    	    <ImageView
+		    	        android:id="@+id/News_Underline"
+		    	        style="@style/UnderLine"/>"
+		    	     	    
+	    	</LinearLayout>
 	        
+	    	<LinearLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="vertical"
+	    	    android:layout_weight="1"
+	    	    android:gravity="center"
+	    	    android:id="@+id/Papers_Layout">
+		        <ImageView
+		    	        android:id="@+id/Papers_Image"
+		    	        android:layout_width="wrap_content"
+		    	    	android:layout_height="wrap_content"
+		    	    	android:scaleType="centerCrop"
+		    	    	android:background="@drawable/papers_x_icon"/> 
+		        <TextView
+		            android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content"
+		    		android:text="Papers"
+		    		android:layout_weight="1"
+		    		android:gravity="center"
+		    		android:id="@+id/Papers_textview"
+		    		style="@style/Choose_Bar_Text"/>
+		        		    	   
+		        <ImageView
+		    	        android:id="@+id/Papers_Underline"
+		    	        style="@style/UnderLine"/>
+		                  
+	        </LinearLayout>
+	        
+	    	<LinearLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="vertical"
+	    	    android:layout_weight="1"
+	    	    android:gravity="center"
+	    	    android:id="@+id/Agenda_Layout">
+	    	    <ImageView
+		    	        android:id="@+id/Agenda_Image"
+		    	        android:layout_width="wrap_content"
+		    	    	android:layout_height="wrap_content"
+		    	    	android:scaleType="centerCrop"
+		    	    	android:background="@drawable/agenda_x_icon"/> 
+	    	    
+	    	    <TextView
+		            android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content"
+		    		android:text="Agenda"
+		    		android:layout_weight="1"
+		    		android:gravity="center"
+		    		android:id="@+id/Agenda_textview"
+		    		style="@style/Choose_Bar_Text"/>	    	    
+	    	    		    	   
+	    	    <ImageView
+		    	        android:id="@+id/Agenda_Underline"
+		    	        style="@style/UnderLine"/>
+	    	    
+	    	</LinearLayout>
+	        
+	    	<LinearLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="vertical"
+	    	    android:layout_weight="1"
+	    	    android:gravity="center"
+	    	    android:id="@+id/Maps_Layout">
+	    	    <ImageView
+		    	    android:id="@+id/Maps_Image"
+		    	    android:src="@drawable/maps_x_icon"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="wrap_content"	    	  
+		    	   
+		    	    /> 
+	    	    <TextView
+		            android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content"
+		    		android:text="Maps"
+		    		android:layout_weight="1"
+		    		android:gravity="center"
+		    		android:id="@+id/Maps_textview"
+		    		style="@style/Choose_Bar_Text"/>	    	    
+	    	    		    	    
+	    	    		    	    
+	    	    <ImageView
+		    	        android:id="@+id/Maps_Underline"
+		    	        style="@style/UnderLine"/>
+	    	    
+	    	</LinearLayout>
+	        
+	    	<LinearLayout
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="vertical"
+	    	    android:layout_weight="1"
+	    	    android:gravity="center"
+	    	    android:id="@+id/Info_Layout">
+	    	    <ImageView
+	    	        android:id="@+id/Info_Image"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="wrap_content"
+		    	    android:background="@drawable/info_x_icon"/>
+	    	    <TextView
+		            android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content"
+		    		android:text="Info"
+		    		android:layout_weight="1"
+		    		android:gravity="center"
+		    		android:id="@+id/Info_textview"
+		    		style="@style/Choose_Bar_Text"/>
+	    	    
+	    	    <ImageView
+		    	        android:id="@+id/Info_Underline"
+		    	       	style="@style/UnderLine"/>
+	    	    
+	    	    
+	    	</LinearLayout>
+	        
+
 	    </LinearLayout>
+	    
+	    <ImageView
+		    	        android:layout_width="fill_parent"
+		    	        android:layout_height="2dip"
+		    	        android:background="@color/UnderLine_Color"/>
 	    
 	    <android.support.v4.view.ViewPager
 	        android:id="@+id/viewpager"

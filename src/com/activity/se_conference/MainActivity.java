@@ -22,6 +22,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -33,6 +35,16 @@ public class MainActivity extends FragmentActivity {
 	private View agenda_view = null;
 	private View maps_view = null;
 	private View info_view = null;
+	private LinearLayout News_Layout = null;
+	private LinearLayout Papers_Layout = null;
+	private LinearLayout Agenda_Layout = null;
+	private LinearLayout Maps_Layout = null;
+	private LinearLayout Info_Layout = null;
+	private ImageView News_underline = null;
+	private ImageView Papers_underline = null;
+	private ImageView Agenda_underline = null;
+	private ImageView Maps_underline = null;
+	private ImageView Info_underline = null;
 	private TextView News_textview;
 	private TextView Papers_textview;
 	private TextView Agenda_textview;
@@ -53,11 +65,25 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		mViewPager = (ViewPager)this.findViewById(R.id.viewpager);		
+		
 		News_textview= (TextView)findViewById(R.id.News_textview);
 		Papers_textview= (TextView)findViewById(R.id.Papers_textview);
 		Agenda_textview= (TextView)findViewById(R.id.Agenda_textview);		
 		Maps_textview= (TextView)findViewById(R.id.Maps_textview);
 		Info_textview= (TextView)findViewById(R.id.Info_textview);
+		
+		News_Layout = (LinearLayout)findViewById(R.id.News_Layout);
+		Papers_Layout = (LinearLayout)findViewById(R.id.Papers_Layout);
+		Agenda_Layout = (LinearLayout)findViewById(R.id.Agenda_Layout);
+		Maps_Layout = (LinearLayout)findViewById(R.id.Maps_Layout);
+		Info_Layout = (LinearLayout)findViewById(R.id.Info_Layout);
+		
+		News_underline = (ImageView)findViewById(R.id.News_Underline);
+		Papers_underline = (ImageView)findViewById(R.id.Papers_Underline);
+		Agenda_underline = (ImageView)findViewById(R.id.Agenda_Underline);
+		Maps_underline = (ImageView)findViewById(R.id.Maps_Underline);
+		Info_underline = (ImageView)findViewById(R.id.Info_Underline);
+		
 		Drawer_List = (ListView)findViewById(R.id.drawer);
 		Drawer_Btn = (Button)findViewById(R.id.Drawer_Btn);
 		MyDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -78,12 +104,12 @@ public class MainActivity extends FragmentActivity {
 		
 		
 		resources = getResources();
-		News_textview.setBackgroundColor(resources.getColor(R.color.skyblue));
-		map.put(0, News_textview);
-		map.put(1,Papers_textview);
-		map.put(2,Agenda_textview);
-		map.put(3,Maps_textview);
-		map.put(4,Info_textview);
+		News_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+		map.put(0, News_underline);
+		map.put(1,Papers_underline);
+		map.put(2,Agenda_underline);
+		map.put(3,Maps_underline);
+		map.put(4,Info_underline);
 		
 		LayoutInflater mLi = LayoutInflater.from(this);     
         news_view = mLi.inflate(R.layout.news, null);
@@ -94,11 +120,11 @@ public class MainActivity extends FragmentActivity {
         
         InitViewpager();
 
-		News_textview.setOnClickListener(new MyViewPageListener(0));
-		Papers_textview.setOnClickListener(new MyViewPageListener(1));
-		Agenda_textview.setOnClickListener(new MyViewPageListener(2));
-		Maps_textview.setOnClickListener(new MyViewPageListener(3));
-		Info_textview.setOnClickListener(new MyViewPageListener(4));
+		News_Layout.setOnClickListener(new MyViewPageListener(0));
+		Papers_Layout.setOnClickListener(new MyViewPageListener(1));
+		Agenda_Layout.setOnClickListener(new MyViewPageListener(2));
+		Maps_Layout.setOnClickListener(new MyViewPageListener(3));
+		Info_Layout.setOnClickListener(new MyViewPageListener(4));
 			
 		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
 			
@@ -107,22 +133,22 @@ public class MainActivity extends FragmentActivity {
 				// TODO Auto-generated method stub
 				switch (arg0){
 					case 0:
-						News_textview.setBackgroundColor(resources.getColor(R.color.skyblue));						
+						News_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));						
 						break;
 					case 1:
-						Papers_textview.setBackgroundColor(resources.getColor(R.color.skyblue));
+						Papers_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
 						break;
 					case 2:
-						Agenda_textview.setBackgroundColor(resources.getColor(R.color.skyblue));
+						Agenda_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
 						break;
 					case 3:
-						Maps_textview.setBackgroundColor(resources.getColor(R.color.skyblue));
+						Maps_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
 						break;
 					case 4:
-						Info_textview.setBackgroundColor(resources.getColor(R.color.skyblue));
+						Info_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
 						break;
 				}
-				map.get(currentPage).setBackgroundColor(0);			
+				map.get(currentPage).setBackgroundColor(resources.getColor(R.color.Info_BackColor));			
 				currentPage = arg0;
 				
 			}

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -26,5 +26,23 @@
 		<item name="android:windowFullscreen">true</item>
 		
     </style>
-
+    
+	<style name="Choose_Bar_Text" >
+	    <item name="android:textSize">18sp</item>
+	    <item name="android:textColor">#333333</item>
+	</style>
+	
+	<style name="Title_Bar_Text" >
+	    <item name="android:textSize">22sp</item>
+	    <item name="android:textColor">#333333</item>
+	</style>
+	
+	<style name = "UnderLine">
+	    <item name="android:layout_height">3dip</item>
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:background">@color/Info_BackColor</item>
+	</style>
+<!-- 	<style name="Title_Bar_BackColor">
+		<item name="android:background">#333333</item>
+	</style> -->
 </resources>
