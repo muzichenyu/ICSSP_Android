@@ -4,46 +4,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <TextView  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:text="Meeting Address MAP" 
-        android:textSize="18sp"
-        android:id="@+id/Address_TextView"
-        android:background="@color/skyblue"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <TextView  
+	        android:layout_width="fill_parent"  
+	        android:layout_height="wrap_content"  
+	        android:text="Meeting Address" 
+	        android:textSize="18sp"
+	        android:id="@+id/Address_TextView"
+	        android:background="@color/Title_BackColor"
+	        android:layout_weight="1"
+	        android:paddingLeft="2dp"
+	        android:paddingTop="2dp"
+	        android:paddingBottom="2dp"/>
+
+        <TextView  
+	        android:layout_width="fill_parent"  
+	        android:layout_height="wrap_content"  
+	        android:text="Inside Info" 
+	        android:textSize="18sp"
+	        android:id="@+id/Location_TextView"
+	        android:background="@color/Info_BackColor"
+	        android:layout_weight="1"
+	        android:paddingLeft="2dp"
+	        android:paddingTop="2dp"
+	        android:paddingBottom="2dp"
+        />
+    </LinearLayout>
+    
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="260sp"
-        android:background="@drawable/map1"
+        android:layout_height="fill_parent"
+        android:src="@drawable/map1"
+        android:scaleType="fitXY"
         android:id="@+id/Address_Image"/>
-    
-<!--     <fragment
-          android:id="@+id/Google_Map"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:name="com.google.android.gms.maps.MapFragment"/>
-     -->
-    
-    <TextView  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:text="Inside Info Image" 
-        android:textSize="18sp"
-        android:id="@+id/Location_TextView"
-        android:background="@color/skyblue"
-        />
-    
+   
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/Image_List"
+        android:visibility="gone"
         />
-<!--     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="100sp"
-        android:background="@color/blueviolet"
-        android:id="@+id/Location_Image"
-        android:visibility="gone"/>
-         -->
+
 
 </LinearLayout>

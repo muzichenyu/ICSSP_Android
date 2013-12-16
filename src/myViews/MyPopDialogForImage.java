@@ -9,6 +9,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
@@ -21,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MyPopDialogForImage{
 	private Dialog dialog;
@@ -29,20 +32,23 @@ public class MyPopDialogForImage{
 	private ArrayList<View> TempImage = new ArrayList<View>();
 	private LayoutInflater inflater = null;
 	private View temp = null;
-	private int[] bitmaps = {R.drawable.test1, R.drawable.test2, R.drawable.test3, R.drawable.test4,/*
-			R.drawable.test5, R.drawable.test6*/};
+	private ArrayList<Bitmap> bitmaps_list = new ArrayList<Bitmap>();
+	private int[] bitmaps_id = new int[10];
 	private ImageView image = null;
 	private Bitmap TempBitmap;
 	
-	public MyPopDialogForImage(Activity activity, int Id) {
+	public MyPopDialogForImage(Activity activity, int Id, ArrayList<Bitmap> Bitmaps, int[] Bitmaps_id) {
+		//需要Bitmap数组以及对应的资源id数组
 		dialog = new Dialog(activity, R.style.Image_Dialog);
 		current_id = Id;
+		bitmaps_list = Bitmaps;
+		bitmaps_id = Bitmaps_id;
 		RelativeLayout popView = (RelativeLayout) LayoutInflater.
 				from(activity).inflate(R.layout.maps_frag_image_dialog, null);
 		viewpager = (ViewPager)popView.findViewById(R.id.image_dialog_viewpager);
 		
-		//获取图片的大小
-		TempBitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.test1);
+		//获取图片的大小 
+		TempBitmap = bitmaps_list.get(0);
 		float BitmapWidth = TempBitmap.getWidth();
 		float BitmapHeight = TempBitmap.getHeight();
 		float WidthtoHeight = BitmapHeight/BitmapWidth;
@@ -64,11 +70,11 @@ public class MyPopDialogForImage{
 		
 		inflater = LayoutInflater.from(activity);
 		final ArrayList<View> ImageViewList = new ArrayList<View>();
-		for(int i=0; i<4; i++){
+		for(int i=0; i<bitmaps_id.length; i++){
 			
 			temp =  inflater.inflate(R.layout.maps_imagelist_layout, null);
 			image = (ImageView) temp.findViewById(R.id.ListImage);
-			image.setBackgroundResource(bitmaps[i]);
+			image.setBackgroundResource(bitmaps_id[i]);
 			ImageViewList.add(temp);
 		
 		}

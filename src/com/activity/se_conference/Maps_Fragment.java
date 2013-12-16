@@ -25,9 +25,10 @@ public class Maps_Fragment extends Fragment{
 	private TextView AddressTextView;
 	private TextView LocationTextView;
 	private ListView ImageList;
-	private boolean isAddressImageVisible = false;
-	private boolean isLocationImageVisble = false;
-	
+	private ArrayList<Bitmap> InsideImages = new ArrayList<Bitmap>();
+	private ArrayList<Bitmap> AddressImages = new ArrayList<Bitmap>();
+	private int[] insideImages = new int[4];
+	private int[] addressImages = new int[1];
 	
 	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -39,26 +40,31 @@ public class Maps_Fragment extends Fragment{
 		LocationTextView = (TextView) view.findViewById(R.id.Location_TextView);
 		ImageList = (ListView)view.findViewById(R.id.Image_List);
 		
+		InitImagesAndArray();
 		
-		ArrayList<Bitmap> bitmaplist = new ArrayList<Bitmap>(); 
-		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test1));
-		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test2));
-		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test3));
-		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test4));
 /*			bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test5));
 		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test6));
 		bitmaplist.add(BitmapFactory.decodeResource(getResources(), R.drawable.test7));*/
 		//比例为8:5的图片显示效果最好？
 		
-		ImageList.setAdapter(new MyImageListAdapter(getActivity(), bitmaplist));
+		ImageList.setAdapter(new MyImageListAdapter(getActivity(), InsideImages));
 		ImageList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
-				new MyPopDialogForImage(getActivity(), position).show();
+				new MyPopDialogForImage(getActivity(), position, InsideImages, insideImages).show();
 				
+			}
+		});
+		
+		AddressImage.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				new MyPopDialogForImage(getActivity(), 0, AddressImages, addressImages).show();
 			}
 		});
 		
@@ -68,14 +74,18 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				if(isAddressImageVisible){
+				AddressImage.setVisibility(View.VISIBLE);
+				ImageList.setVisibility(View.GONE);
+				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Title_BackColor));
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Info_BackColor));
+			/*	if(isAddressImageVisible){
 					AddressImage.setVisibility(View.GONE);
 					isAddressImageVisible = false;
 				}
 				else if(!isAddressImageVisible){
 					AddressImage.setVisibility(View.VISIBLE);
 					isAddressImageVisible = true;
-				}
+				}*/
 			}
 		});
 			
@@ -84,19 +94,41 @@ public class Maps_Fragment extends Fragment{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if(isLocationImageVisble){
+				AddressImage.setVisibility(View.GONE);
+				ImageList.setVisibility(View.VISIBLE);
+				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Info_BackColor));
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Title_BackColor));
+			/*	if(isLocationImageVisble){
 					ImageList.setVisibility(View.GONE);
 					isLocationImageVisble = false;
 				}
 				else if(!isLocationImageVisble){
 					ImageList.setVisibility(View.VISIBLE);
 					isLocationImageVisble = true;
-				}
+				}*/
 			}
 		});
 			
         return view;
 
+	}
+
+	private void InitImagesAndArray() {
+		// TODO Auto-generated method stub
+		//初始化两个，方便穿传进去用
+		
+		AddressImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.map1));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test1));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test2));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test3));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test4));
+		
+		addressImages[0] = R.drawable.map1;
+		insideImages[0] = R.drawable.test1;
+		insideImages[1] = R.drawable.test2;
+		insideImages[2] = R.drawable.test3;
+		insideImages[3] = R.drawable.test4;
+		
 	}
 	
 }
