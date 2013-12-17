@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity {
 		
 		
 		resources = getResources();
-		News_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+		News_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));
 		map.put(0, News_underline);
 		map.put(1,Papers_underline);
 		map.put(2,Agenda_underline);
@@ -133,22 +133,22 @@ public class MainActivity extends FragmentActivity {
 				// TODO Auto-generated method stub
 				switch (arg0){
 					case 0:
-						News_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));						
+						News_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));						
 						break;
 					case 1:
-						Papers_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+						Papers_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));
 						break;
 					case 2:
-						Agenda_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+						Agenda_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));
 						break;
 					case 3:
-						Maps_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+						Maps_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));
 						break;
 					case 4:
-						Info_underline.setBackgroundColor(resources.getColor(R.color.UnderLine_Color));
+						Info_underline.setBackgroundColor(resources.getColor(R.color.Blue_Color));
 						break;
 				}
-				map.get(currentPage).setBackgroundColor(resources.getColor(R.color.Info_BackColor));			
+				map.get(currentPage).setBackgroundColor(resources.getColor(R.color.Light_Grey));			
 				currentPage = arg0;
 				
 			}

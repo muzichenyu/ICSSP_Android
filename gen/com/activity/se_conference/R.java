@@ -11,9 +11,9 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int Info_BackColor=0x7f040001;
-        public static final int Title_BackColor=0x7f040000;
-        public static final int UnderLine_Color=0x7f040002;
+        public static final int Blue_Color=0x7f040002;
+        public static final int Dark_Grey=0x7f040000;
+        public static final int Light_Grey=0x7f040001;
         /** 蜜色 
          */
         public static final int aliceblue=0x7f04002f;
@@ -480,11 +480,14 @@ public final class R {
         public static final int outline_list_expand=0x7f02000f;
         public static final int papers_x_icon=0x7f020010;
         public static final int right_arrow=0x7f020011;
-        public static final int test1=0x7f020012;
-        public static final int test2=0x7f020013;
-        public static final int test3=0x7f020014;
-        public static final int test4=0x7f020015;
-        public static final int toimportant=0x7f020016;
+        public static final int t1=0x7f020012;
+        public static final int t2=0x7f020013;
+        public static final int t3=0x7f020014;
+        public static final int t4=0x7f020015;
+        public static final int t5=0x7f020016;
+        public static final int t6=0x7f020017;
+        public static final int t7=0x7f020018;
+        public static final int toimportant=0x7f020019;
     }
     public static final class id {
         public static final int Address_Image=0x7f090029;
@@ -615,9 +618,10 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
-        public static final int Choose_Bar_Text=0x7f070003;
+        public static final int First_Class_Text=0x7f070005;
         public static final int Image_Dialog=0x7f070002;
-        public static final int Title_Bar_Text=0x7f070004;
-        public static final int UnderLine=0x7f070005;
+        public static final int Second_Class_Text=0x7f070004;
+        public static final int Third_Class_Text=0x7f070003;
+        public static final int UnderLine=0x7f070006;
     }
 }

@@ -27,7 +27,7 @@ public class Maps_Fragment extends Fragment{
 	private ListView ImageList;
 	private ArrayList<Bitmap> InsideImages = new ArrayList<Bitmap>();
 	private ArrayList<Bitmap> AddressImages = new ArrayList<Bitmap>();
-	private int[] insideImages = new int[4];
+	private int[] insideImages = new int[7];
 	private int[] addressImages = new int[1];
 	
 	@Override  
@@ -76,8 +76,8 @@ public class Maps_Fragment extends Fragment{
 				// TODO Auto-generated method stub
 				AddressImage.setVisibility(View.VISIBLE);
 				ImageList.setVisibility(View.GONE);
-				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Title_BackColor));
-				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Info_BackColor));
+				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Dark_Grey));
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
 			/*	if(isAddressImageVisible){
 					AddressImage.setVisibility(View.GONE);
 					isAddressImageVisible = false;
@@ -96,8 +96,8 @@ public class Maps_Fragment extends Fragment{
 				// TODO Auto-generated method stub
 				AddressImage.setVisibility(View.GONE);
 				ImageList.setVisibility(View.VISIBLE);
-				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Info_BackColor));
-				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Title_BackColor));
+				AddressTextView.setBackgroundColor(getResources().getColor(R.color.Light_Grey));
+				LocationTextView.setBackgroundColor(getResources().getColor(R.color.Dark_Grey));
 			/*	if(isLocationImageVisble){
 					ImageList.setVisibility(View.GONE);
 					isLocationImageVisble = false;
@@ -118,16 +118,22 @@ public class Maps_Fragment extends Fragment{
 		//初始化两个，方便穿传进去用
 		
 		AddressImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.map1));
-		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test1));
-		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test2));
-		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test3));
-		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.test4));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t1));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t2));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t3));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t4));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t5));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t6));
+		InsideImages.add(BitmapFactory.decodeResource(getResources(), R.drawable.t7));
 		
 		addressImages[0] = R.drawable.map1;
-		insideImages[0] = R.drawable.test1;
-		insideImages[1] = R.drawable.test2;
-		insideImages[2] = R.drawable.test3;
-		insideImages[3] = R.drawable.test4;
+		insideImages[0] = R.drawable.t1;
+		insideImages[1] = R.drawable.t2;
+		insideImages[2] = R.drawable.t3;
+		insideImages[3] = R.drawable.t4;
+		insideImages[4] = R.drawable.t5;
+		insideImages[5] = R.drawable.t6;
+		insideImages[6] = R.drawable.t7;
 		
 	}
 	

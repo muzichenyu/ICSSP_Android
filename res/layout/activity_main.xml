@@ -13,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/Title_BackColor">
+        android:background="@color/Dark_Grey">
         
         <Button
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
        		 android:layout_height="wrap_content" 
        		 android:text="ICSSP"
        		 android:layout_gravity="center"
-       		 style="@style/Title_Bar_Text"/>
+       		 style="@style/First_Class_Text"/>
             
         
     </LinearLayout>
@@ -66,7 +66,7 @@
 			    		android:layout_weight="1"
 			    		android:gravity="center"
 			    		android:id="@+id/News_textview"
-			    		style="@style/Choose_Bar_Text"/>
+			    		style="@style/Second_Class_Text"/>
 		    	    <ImageView
 		    	        android:id="@+id/News_Underline"
 		    	        style="@style/UnderLine"/>"
@@ -93,7 +93,7 @@
 		    		android:layout_weight="1"
 		    		android:gravity="center"
 		    		android:id="@+id/Papers_textview"
-		    		style="@style/Choose_Bar_Text"/>
+		    		style="@style/Second_Class_Text"/>
 		        		    	   
 		        <ImageView
 		    	        android:id="@+id/Papers_Underline"
@@ -122,7 +122,7 @@
 		    		android:layout_weight="1"
 		    		android:gravity="center"
 		    		android:id="@+id/Agenda_textview"
-		    		style="@style/Choose_Bar_Text"/>	    	    
+		    		style="@style/Second_Class_Text"/>	    	    
 	    	    		    	   
 	    	    <ImageView
 		    	        android:id="@+id/Agenda_Underline"
@@ -151,7 +151,7 @@
 		    		android:layout_weight="1"
 		    		android:gravity="center"
 		    		android:id="@+id/Maps_textview"
-		    		style="@style/Choose_Bar_Text"/>	    	    
+		    		style="@style/Second_Class_Text"/>	    	    
 	    	    		    	    
 	    	    		    	    
 	    	    <ImageView
@@ -179,7 +179,7 @@
 		    		android:layout_weight="1"
 		    		android:gravity="center"
 		    		android:id="@+id/Info_textview"
-		    		style="@style/Choose_Bar_Text"/>
+		    		style="@style/Second_Class_Text"/>
 	    	    
 	    	    <ImageView
 		    	        android:id="@+id/Info_Underline"
@@ -194,7 +194,7 @@
 	    <ImageView
 		    	        android:layout_width="fill_parent"
 		    	        android:layout_height="2dip"
-		    	        android:background="@color/UnderLine_Color"/>
+		    	        android:background="@color/Blue_Color"/>
 	    
 	    <android.support.v4.view.ViewPager
 	        android:id="@+id/viewpager"
